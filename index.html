@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+ <html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>A-Frame で超簡単 AR</title>
+  </head>
+  <body style="margin:0px; overflow:hidden;">
+   <!-- A-Frame ライブラリの読み込み -->
+   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <!-- AR.js ライブラリの読み込み -->
+   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+
+  <!-- A-Frame の VR空間に AR.js を紐づける（デバッグUIを非表示） -->
+   <a-scene embedded arjs="debugUIEnabled:false;">
+
+    <!-- マーカーを登録（プリセットされている「hiro」マーカー） -->
+    <a-marker type='pattern' url='marker/pattern-薔薇の薔.patt'>
+       <a-sphere scale=".25 .25 .25" position="0 .5 0" color="#f00">
+         <a-animation attribute="position" to="0 1 0" direction="alternate" dur="2000" repeat="indefinite">
+         </a-animation>
+       </a-sphere>
+     </a-marker>
+
+    <!-- AR用のカメラを置く -->
+     <a-entity camera></a-entity>
+
+   </a-scene>
+
+ </body>
+</html>
